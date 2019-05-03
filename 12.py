@@ -15,6 +15,8 @@ Swidth = 20
 Sheight = 20
 pygame.display
 
+### food!!!! ####
+
 foodX = random.randrange(500)
 foodY = random.randrange(500)
 
@@ -27,13 +29,18 @@ while True:
     funzone.fill((0,0,0))
     myblock = pygame.draw.rect(funzone, (255,200,175), (foodX, foodY, 20,20))
     pygame.draw.rect(funzone, (255, 0, 0), (pX, pY, width, height))
-    pygame.draw.rect(funzone, (255,255,255), (pX, pY, smallwidth, smallheight))
+    pygame.draw.rect(funzone, (255,255,255), (pX, pY, Swidth, Sheight))
     pygame.draw.rect(funzone, (255,255,255), (pX+25,pY, Swidth, Sheight))
 
-    ### collision
-  
+    ### collision ###
+    
+
+if any (posX<= X <= (pX + widthw) for X in range (foodx, foodx + Swidth)):
+    pygame.quit()
+    sys.exit()
     
     ### moving keys
+
     if keys[pygame.K_a]:
         if pX > 0:
             pX-=vel
